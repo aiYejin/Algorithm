@@ -4,8 +4,7 @@ input = sys.stdin.readline
 N, G = input().split()
 s = set()
 for _ in range(int(N)):
-    id = input()
-    s.add(id)
+    s.add(input())
 cnt = len(s)
 if G == 'Y':
     print(cnt)
