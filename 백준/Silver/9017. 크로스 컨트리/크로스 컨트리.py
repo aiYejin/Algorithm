@@ -4,13 +4,16 @@ input = sys.stdin.readline
 T = int(input())
 for _ in range(T):
     N = int(input())
-    arr = list(map(int, input().split()))
-    set_arr = set(arr)
+    scores = list(map(int, input().split()))
     answer = {}
     cnt = [0]*201
-    for s in set_arr:
-        if arr.count(s) != 6:
-            arr = [i for i in arr if i != s]
+    arr = [0]*201
+    team = [0]*201
+    for a in scores:
+        team[a] += 1
+    for a in scores:
+        if team[a] == 6:
+            arr.append(a)
     for i in range(len(arr)):
         if cnt[arr[i]] == 0:
             answer[arr[i]] = [i,0,0]
